@@ -1,0 +1,107 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://dku1jdihgdoc6" path="res://scripts/results.gd" id="1_o5vhm"]
+[ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="2_qmsmn"]
+[ext_resource type="AudioStream" uid="uid://cwtol7l4s31tf" path="res://audio/drum_roll.wav" id="3_y7e1u"]
+[ext_resource type="AudioStream" uid="uid://cs1v2s404inb5" path="res://audio/bell.wav" id="4_cqywb"]
+[ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="5_bvj8y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_myq7g"]
+font = ExtResource("5_bvj8y")
+font_size = 54
+
+[sub_resource type="LabelSettings" id="LabelSettings_mk788"]
+font = ExtResource("5_bvj8y")
+font_size = 238
+
+[sub_resource type="LabelSettings" id="LabelSettings_8kypd"]
+font = ExtResource("5_bvj8y")
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_myq7g"]
+bg_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4cf5t"]
+font = ExtResource("5_bvj8y")
+font_size = 21
+
+[node name="results" type="Node2D" unique_id=1358491086]
+script = ExtResource("1_o5vhm")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1572966428]
+modulate = Color(1, 0, 0.25882354, 1)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.9999998, 0.99999994)
+texture = ExtResource("2_qmsmn")
+
+[node name="audio_drumroll" type="AudioStreamPlayer" parent="." unique_id=1921117094]
+stream = ExtResource("3_y7e1u")
+autoplay = true
+
+[node name="bellsfx" type="AudioStreamPlayer" parent="." unique_id=965570833]
+stream = ExtResource("4_cqywb")
+
+[node name="center_container" type="CenterContainer" parent="." unique_id=1282177646]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="center_container" unique_id=1223424105]
+layout_mode = 2
+
+[node name="resp_txt" type="Label" parent="center_container/VBoxContainer" unique_id=113852190]
+layout_mode = 2
+text = "Answer:"
+label_settings = SubResource("LabelSettings_myq7g")
+horizontal_alignment = 1
+
+[node name="number" type="Label" parent="center_container/VBoxContainer" unique_id=1279370537]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
+label_settings = SubResource("LabelSettings_mk788")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sua_resp" type="Label" parent="center_container/VBoxContainer" unique_id=7887053]
+layout_mode = 2
+text = "Your Answer:"
+label_settings = SubResource("LabelSettings_8kypd")
+horizontal_alignment = 1
+
+[node name="conta" type="Label" parent="center_container/VBoxContainer" unique_id=120485334]
+layout_mode = 2
+text = "Sum: "
+label_settings = SubResource("LabelSettings_8kypd")
+horizontal_alignment = 1
+
+[node name="back_btn" type="Button" parent="." unique_id=611268840]
+offset_left = 16.0
+offset_top = 664.0
+offset_right = 142.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("5_bvj8y")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_myq7g")
+text = "Back
+"
+
+[node name="soro_label" type="Label" parent="." unique_id=972796491]
+offset_left = 880.0
+offset_top = 680.0
+offset_right = 1397.0
+offset_bottom = 719.0
+text = "Sorobinho 1.2 - miiteos.neocities.org 2026"
+label_settings = SubResource("LabelSettings_4cf5t")
+
+[node name="restart_btn" type="Button" parent="." unique_id=1189820043]
+offset_left = 152.0
+offset_top = 664.0
+offset_right = 368.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("5_bvj8y")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_myq7g")
+text = "Try Again"
+
+[connection signal="finished" from="audio_drumroll" to="." method="_on_audio_drumroll_finished"]
+[connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]

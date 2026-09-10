@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://yrour4j6t6f0"]
+
+[ext_resource type="Script" uid="uid://dibna7p3nsh7e" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="2_tbgi4"]
+[ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="3_tefeu"]
+[ext_resource type="AudioStream" uid="uid://cs1v2s404inb5" path="res://audio/bell.wav" id="4_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://d1wlf3v2ajeto" path="res://audio/cowbell.wav" id="5_tbgi4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4alqu"]
+font = ExtResource("3_tefeu")
+font_size = 238
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_chs5w"]
+font = ExtResource("3_tefeu")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font = ExtResource("3_tefeu")
+font_size = 54
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcs6f"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_chs5w"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="main" type="Node2D" unique_id=1605953907]
+script = ExtResource("1_jyhfs")
+
+[node name="background" type="Sprite2D" parent="." unique_id=304319355]
+modulate = Color(1, 0, 0.25882354, 1)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.9999998, 0.99999994)
+texture = ExtResource("2_tbgi4")
+
+[node name="center_container" type="CenterContainer" parent="." unique_id=121660493]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="number" type="Label" parent="center_container" unique_id=1488120241]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_4alqu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_btn" type="Button" parent="." unique_id=835612132]
+offset_left = 16.0
+offset_top = 664.0
+offset_right = 142.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("3_tefeu")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
+text = "Back
+"
+
+[node name="soro_label" type="Label" parent="." unique_id=1101867481]
+offset_left = 880.0
+offset_top = 680.0
+offset_right = 1397.0
+offset_bottom = 719.0
+text = "Sorobinho 1.1 - miiteos.neocities.org 2026"
+label_settings = SubResource("LabelSettings_chs5w")
+
+[node name="bellsfx" type="AudioStreamPlayer" parent="." unique_id=30923071]
+stream = ExtResource("4_o6xl0")
+
+[node name="timer" type="Timer" parent="." unique_id=1334921313]
+wait_time = 1.1
+one_shot = true
+autostart = true
+
+[node name="total_timer" type="Timer" parent="." unique_id=693790745]
+wait_time = 1.1
+one_shot = true
+
+[node name="countdown_container" type="CenterContainer" parent="." unique_id=1546376660]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="countdown_container" unique_id=1866216389]
+layout_mode = 2
+
+[node name="ready" type="Label" parent="countdown_container/VBoxContainer" unique_id=128041097]
+layout_mode = 2
+text = "Ready"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+
+[node name="set" type="Label" parent="countdown_container/VBoxContainer" unique_id=581111419]
+visible = false
+layout_mode = 2
+text = "Set"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+
+[node name="go" type="Label" parent="countdown_container/VBoxContainer" unique_id=1623980771]
+visible = false
+layout_mode = 2
+text = "Go!"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+
+[node name="cowbellsfx" type="AudioStreamPlayer" parent="." unique_id=1161985276]
+stream = ExtResource("5_tbgi4")
+autoplay = true
+
+[node name="timebar" type="ProgressBar" parent="." unique_id=95923590]
+offset_top = 717.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wcs6f")
+theme_override_styles/fill = SubResource("StyleBoxFlat_chs5w")
+show_percentage = false
+
+[connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]

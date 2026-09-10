@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bg1pdasdinrkp"]
+
+[ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="1_7y4sk"]
+[ext_resource type="Script" uid="uid://de5aq5p1j1jbr" path="res://scripts/answer.gd" id="1_mgik1"]
+[ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="2_mgik1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wcs6f"]
+font = ExtResource("2_mgik1")
+font_size = 54
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.29411766)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="LabelSettings" id="LabelSettings_chs5w"]
+font = ExtResource("2_mgik1")
+font_size = 21
+
+[node name="final_menu" type="Node2D" unique_id=1414528208]
+script = ExtResource("1_mgik1")
+
+[node name="background" type="Sprite2D" parent="." unique_id=1139854149]
+modulate = Color(1, 0, 0.25882354, 1)
+position = Vector2(640, 360.00003)
+scale = Vector2(0.9999998, 0.99999994)
+texture = ExtResource("1_7y4sk")
+metadata/_edit_lock_ = true
+
+[node name="center_container" type="CenterContainer" parent="." unique_id=1939411707]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="center_container" unique_id=1663232173]
+layout_mode = 2
+
+[node name="resp_txt" type="Label" parent="center_container/VBoxContainer" unique_id=1431640764]
+layout_mode = 2
+text = "    Answer    "
+label_settings = SubResource("LabelSettings_wcs6f")
+
+[node name="answerbox" type="LineEdit" parent="center_container/VBoxContainer" unique_id=272829261]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_mgik1")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_lquwl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_272bh")
+alignment = 1
+max_length = 13
+emoji_menu_enabled = false
+select_all_on_focus = true
+virtual_keyboard_type = 2
+
+[node name="ok_btn" type="Button" parent="center_container/VBoxContainer" unique_id=1768127561]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mgik1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
+text = "OK"
+
+[node name="back_btn" type="Button" parent="." unique_id=68817388]
+offset_left = 16.0
+offset_top = 664.0
+offset_right = 142.0
+offset_bottom = 705.0
+theme_override_fonts/font = ExtResource("2_mgik1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
+text = "Back
+"
+
+[node name="soro_label" type="Label" parent="." unique_id=246734293]
+offset_left = 880.0
+offset_top = 680.0
+offset_right = 1397.0
+offset_bottom = 719.0
+text = "Sorobinho 1.1 - miiteos.neocities.org 2026"
+label_settings = SubResource("LabelSettings_chs5w")
+
+[connection signal="pressed" from="center_container/VBoxContainer/ok_btn" to="." method="_on_ok_btn_pressed"]
+[connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]
