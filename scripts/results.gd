@@ -7,6 +7,8 @@ extends Node
 var audio_finished: bool = false
 var result_mostrado: bool = false
 
+var won: bool
+
 func _on_audio_drumroll_finished() -> void:
 	audio_finished = true
 
@@ -47,12 +49,20 @@ func show_result() -> void:
 		var tween = create_tween()
 		tween.tween_property($background, "modulate", Color("#00cc85"), 0.5)		
 		Game.inarow += 1
+		won = true
 	else:
 		var tween = create_tween()
 		tween.tween_property($background, "modulate", Color("#9D00FF"), 0.5)
 		Game.inarow = 0
+		won = false
 
 func _on_back_btn_pressed() -> void:
 	Transition.transition()
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")
+
+
+func _on_restart_btn_pressed() -> void:
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

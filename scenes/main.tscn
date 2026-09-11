@@ -32,13 +32,14 @@ script = ExtResource("1_jyhfs")
 
 [node name="background" type="Sprite2D" parent="." unique_id=304319355]
 modulate = Color(1, 0, 0.25882354, 1)
-position = Vector2(640, 360.00003)
-scale = Vector2(0.9999998, 0.99999994)
+position = Vector2(640, 400.00003)
+scale = Vector2(0.9999998, 1.111111)
 texture = ExtResource("2_tbgi4")
+metadata/_edit_lock_ = true
 
 [node name="center_container" type="CenterContainer" parent="." unique_id=121660493]
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 800.0
 
 [node name="number" type="Label" parent="center_container" unique_id=1488120241]
 layout_mode = 2
@@ -49,9 +50,9 @@ vertical_alignment = 1
 
 [node name="back_btn" type="Button" parent="." unique_id=835612132]
 offset_left = 16.0
-offset_top = 664.0
+offset_top = 744.0
 offset_right = 142.0
-offset_bottom = 705.0
+offset_bottom = 785.0
 theme_override_fonts/font = ExtResource("3_tefeu")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
@@ -59,11 +60,11 @@ text = "Back
 "
 
 [node name="soro_label" type="Label" parent="." unique_id=1101867481]
-offset_left = 880.0
-offset_top = 680.0
-offset_right = 1397.0
-offset_bottom = 719.0
-text = "Sorobinho 1.1 - miiteos.neocities.org 2026"
+offset_left = 856.0
+offset_top = 752.0
+offset_right = 1373.0
+offset_bottom = 791.0
+text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
 label_settings = SubResource("LabelSettings_chs5w")
 
 [node name="bellsfx" type="AudioStreamPlayer" parent="." unique_id=30923071]
@@ -79,8 +80,9 @@ wait_time = 1.1
 one_shot = true
 
 [node name="countdown_container" type="CenterContainer" parent="." unique_id=1546376660]
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = -8.0
+offset_right = 1272.0
+offset_bottom = 800.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="countdown_container" unique_id=1866216389]
 layout_mode = 2
@@ -110,9 +112,9 @@ stream = ExtResource("5_tbgi4")
 autoplay = true
 
 [node name="timebar" type="ProgressBar" parent="." unique_id=95923590]
-offset_top = 717.0
+offset_top = 797.0
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 800.0
 theme_override_styles/background = SubResource("StyleBoxFlat_wcs6f")
 theme_override_styles/fill = SubResource("StyleBoxFlat_chs5w")
 show_percentage = false

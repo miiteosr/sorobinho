@@ -3,17 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="1_5mbse"]
 [ext_resource type="Script" uid="uid://cq4qwtibhcs8t" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
 [ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="2_natt5"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_dfy5j"]
-font = ExtResource("2_natt5")
-font_size = 90
-
-[sub_resource type="LabelSettings" id="LabelSettings_r3g3c"]
-font = ExtResource("2_natt5")
-font_size = 21
-
-[sub_resource type="LabelSettings" id="LabelSettings_7yvfd"]
-font = ExtResource("2_natt5")
+[ext_resource type="Script" uid="uid://bxn00jffmphj0" path="res://scripts/adaptarmenu.gd" id="3_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://boxhvbelnbh7b" path="res://images/settings.png" id="4_7yvfd"]
+[ext_resource type="Texture2D" uid="uid://darqtxudodyku" path="res://images/github_icon.png" id="5_s5g8n"]
+[ext_resource type="Texture2D" uid="uid://dy7aehlkrlec6" path="res://images/web_icon.png" id="6_dfy5j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_natt5"]
 content_margin_left = 6.0
@@ -50,103 +43,158 @@ corner_radius_bottom_left = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vvtq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="LabelSettings" id="LabelSettings_natt5"]
+[sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
 font = ExtResource("2_natt5")
-font_size = 54
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5g8n"]
-bg_color = Color(0, 0, 0, 0.6862745)
+font_size = 27
 
 [sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
 font = ExtResource("2_natt5")
 font_size = 30
 
-[sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
+[sub_resource type="LabelSettings" id="LabelSettings_dfy5j"]
 font = ExtResource("2_natt5")
-font_size = 27
+font_size = 90
 
-[sub_resource type="Theme" id="Theme_85riq"]
+[sub_resource type="LabelSettings" id="LabelSettings_r3g3c"]
+font = ExtResource("2_natt5")
+font_size = 21
+
+[sub_resource type="LabelSettings" id="LabelSettings_natt5"]
+font = ExtResource("2_natt5")
+font_size = 54
+
+[sub_resource type="Theme" id="Theme_s5g8n"]
+default_font = ExtResource("2_natt5")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hago"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjjcl"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kait0"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5g8n"]
+bg_color = Color(0, 0, 0, 0.6862745)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf3n4"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h73c4"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uui5l"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yvfd"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfy5j"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85riq"]
+content_margin_left = 6.0
+content_margin_top = 6.0
+content_margin_right = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
 
 [node name="main_menu" type="Node2D" unique_id=753227403]
 script = ExtResource("1_r3g3c")
 
 [node name="background" type="Sprite2D" parent="." unique_id=718886299]
 modulate = Color(1, 0, 0.25882354, 1)
-position = Vector2(639.9999, 360)
-scale = Vector2(0.9999999, 0.99999994)
+position = Vector2(639.9999, 400.00006)
+scale = Vector2(0.9999999, 1.1111112)
 texture = ExtResource("1_5mbse")
 
-[node name="title" type="Label" parent="." unique_id=2139182453]
-offset_left = 440.0
-offset_top = 64.0
-offset_right = 850.0
-offset_bottom = 187.0
-text = "Sorobinho"
-label_settings = SubResource("LabelSettings_dfy5j")
+[node name="menu" type="Control" parent="." unique_id=679525706]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 88.0
+script = ExtResource("3_3vvtq")
 
-[node name="soro_label" type="Label" parent="." unique_id=1300917323]
-offset_left = 448.0
-offset_top = 176.0
-offset_right = 965.0
-offset_bottom = 215.0
-text = "Sorobinho 1.1 - miiteos.neocities.org 2026"
-label_settings = SubResource("LabelSettings_r3g3c")
+[node name="text_inputs" type="Control" parent="menu" unique_id=876137676]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="soro_label" type="Label" parent="soro_label" unique_id=200691481]
+[node name="numbers" type="LineEdit" parent="menu/text_inputs" unique_id=24489626]
 layout_mode = 0
-offset_left = 681.0
-offset_top = 480.0
-offset_right = 1198.0
-offset_bottom = 519.0
-theme_override_font_sizes/font_size = 9
-text = "Background Color"
-label_settings = SubResource("LabelSettings_7yvfd")
-
-[node name="speed" type="LineEdit" parent="." unique_id=25630872]
 offset_left = 696.0
-offset_top = 320.0
+offset_top = 496.0
 offset_right = 836.0
-offset_bottom = 381.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_natt5")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_natt5")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_r3g3c")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3vvtq")
-placeholder_text = "3"
-alignment = 1
-max_length = 3
-emoji_menu_enabled = false
-virtual_keyboard_enabled = false
-virtual_keyboard_type = 2
-
-[node name="digits" type="LineEdit" parent="." unique_id=581185008]
-offset_left = 696.0
-offset_top = 392.0
-offset_right = 836.0
-offset_bottom = 453.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
-theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_natt5")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_natt5")
-theme_override_styles/read_only = SubResource("StyleBoxFlat_r3g3c")
-theme_override_styles/focus = SubResource("StyleBoxFlat_3vvtq")
-placeholder_text = "1"
-alignment = 1
-max_length = 1
-emoji_menu_enabled = false
-virtual_keyboard_enabled = false
-virtual_keyboard_type = 2
-
-[node name="numbers" type="LineEdit" parent="." unique_id=24489626]
-offset_left = 696.0
-offset_top = 464.0
-offset_right = 836.0
-offset_bottom = 525.0
+offset_bottom = 557.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
 theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
@@ -159,73 +207,185 @@ placeholder_text = "5"
 alignment = 1
 max_length = 3
 emoji_menu_enabled = false
-virtual_keyboard_enabled = false
-virtual_keyboard_type = 2
+virtual_keyboard_type = 3
 
-[node name="speed_txt" type="Label" parent="." unique_id=8034658]
+[node name="digits" type="LineEdit" parent="menu/text_inputs" unique_id=581185008]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 424.0
+offset_right = 836.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_natt5")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_r3g3c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3vvtq")
+placeholder_text = "1"
+alignment = 1
+max_length = 1
+emoji_menu_enabled = false
+virtual_keyboard_type = 3
+
+[node name="speed" type="LineEdit" parent="menu/text_inputs" unique_id=25630872]
+layout_mode = 0
+offset_left = 696.0
+offset_top = 352.0
+offset_right = 836.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 0.5019608)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_natt5")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_r3g3c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3vvtq")
+placeholder_text = "3"
+alignment = 1
+max_length = 3
+emoji_menu_enabled = false
+virtual_keyboard_type = 3
+
+[node name="labels" type="Control" parent="menu" unique_id=56700571]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="error_txt" type="Label" parent="menu/labels" unique_id=16713405]
+visible = false
+layout_mode = 0
+offset_left = 432.0
+offset_top = 624.0
+offset_right = 850.0
+offset_bottom = 665.0
+text = "Error: invaid values"
+label_settings = SubResource("LabelSettings_s5g8n")
+horizontal_alignment = 1
+
+[node name="xinarow" type="Label" parent="menu/labels" unique_id=206365331]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 752.0
+offset_right = 525.0
+offset_bottom = 793.0
+text = "0 in a row"
+label_settings = SubResource("LabelSettings_3vvtq")
+
+[node name="title" type="Label" parent="menu/labels" unique_id=2139182453]
+layout_mode = 0
 offset_left = 440.0
-offset_top = 312.0
-offset_right = 596.0
-offset_bottom = 387.0
+offset_top = 152.0
+offset_right = 850.0
+offset_bottom = 275.0
+text = "Sorobinho"
+label_settings = SubResource("LabelSettings_dfy5j")
+
+[node name="soro_label" type="Label" parent="menu/labels" unique_id=1300917323]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 256.0
+offset_right = 957.0
+offset_bottom = 295.0
+text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
+label_settings = SubResource("LabelSettings_r3g3c")
+
+[node name="speed_txt" type="Label" parent="menu/labels" unique_id=8034658]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 344.0
+offset_right = 644.0
+offset_bottom = 419.0
 text = "Time (s)"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
-[node name="digits_txt" type="Label" parent="." unique_id=625414936]
-offset_left = 432.0
-offset_top = 384.0
-offset_right = 588.0
-offset_bottom = 459.0
+[node name="digits_txt" type="Label" parent="menu/labels" unique_id=625414936]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 416.0
+offset_right = 596.0
+offset_bottom = 491.0
 text = "Digits"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
-[node name="numbers_txt" type="Label" parent="." unique_id=958563394]
-offset_left = 440.0
-offset_top = 456.0
-offset_right = 657.0
-offset_bottom = 531.0
+[node name="numbers_txt" type="Label" parent="menu/labels" unique_id=958563394]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 488.0
+offset_right = 665.0
+offset_bottom = 563.0
 text = "Numbers"
 label_settings = SubResource("LabelSettings_natt5")
 horizontal_alignment = 1
 
-[node name="enter_btn" type="Button" parent="." unique_id=873365055]
+[node name="buttons" type="Control" parent="menu" unique_id=1747158541]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="website_btn" type="Button" parent="menu/buttons" unique_id=2066901064]
+layout_mode = 0
+offset_left = 1160.0
+offset_top = 744.0
+offset_right = 1208.0
+offset_bottom = 792.0
+theme = SubResource("Theme_s5g8n")
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4hago")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gjjcl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kait0")
+icon = ExtResource("6_dfy5j")
+text_overrun_behavior = 1
+autowrap_trim_flags = 0
+clip_text = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="enter_btn" type="Button" parent="menu/buttons" unique_id=873365055]
+layout_mode = 0
 offset_left = 440.0
-offset_top = 544.0
+offset_top = 576.0
 offset_right = 840.0
-offset_bottom = 585.0
+offset_bottom = 617.0
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5g8n")
 text = "Start!"
 
-[node name="xinarow" type="Label" parent="." unique_id=206365331]
-offset_left = 8.0
-offset_top = 680.0
-offset_right = 525.0
-offset_bottom = 721.0
-text = "0 in a row"
-label_settings = SubResource("LabelSettings_3vvtq")
-
-[node name="error_txt" type="Label" parent="." unique_id=16713405]
-visible = false
-offset_left = 432.0
-offset_top = 592.0
-offset_right = 850.0
-offset_bottom = 633.0
-text = "Error: invaid values"
-label_settings = SubResource("LabelSettings_s5g8n")
-horizontal_alignment = 1
-
-[node name="ColorPickerButton" type="ColorPickerButton" parent="." unique_id=1812064600]
-offset_left = 1120.0
-offset_top = 680.0
-offset_right = 1267.0
-offset_bottom = 711.0
-theme = SubResource("Theme_85riq")
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+[node name="restart_btn" type="Button" parent="menu/buttons" unique_id=750976052]
+layout_mode = 0
+offset_left = 1216.0
+offset_top = 744.0
+offset_right = 1264.0
+offset_bottom = 792.0
 theme_override_fonts/font = ExtResource("2_natt5")
-color = Color(1, 0, 0.25882354, 1)
-edit_alpha = false
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_wf3n4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h73c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uui5l")
+icon = ExtResource("5_s5g8n")
+icon_alignment = 1
+expand_icon = true
 
-[connection signal="pressed" from="enter_btn" to="." method="_on_enter_btn_pressed"]
+[node name="settings_btn" type="Button" parent="menu/buttons" unique_id=617150289]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 8.0
+offset_right = 1272.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_7yvfd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dfy5j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_85riq")
+icon = ExtResource("4_7yvfd")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="menu/buttons/website_btn" to="." method="_on_website_btn_pressed"]
+[connection signal="pressed" from="menu/buttons/enter_btn" to="." method="_on_enter_btn_pressed"]
+[connection signal="pressed" from="menu/buttons/restart_btn" to="." method="_on_restart_btn_pressed"]

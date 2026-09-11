@@ -23,7 +23,7 @@ Game="*uid://b11dr2v85tj40"
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=720
+window/size/viewport_height=800
 window/stretch/mode="viewport"
 
 [input]
@@ -43,3 +43,5 @@ ui_accept={
 
 rendering_device/driver.windows="d3d12"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/screen_space_aa=1

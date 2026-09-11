@@ -3,6 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="1_7y4sk"]
 [ext_resource type="Script" uid="uid://de5aq5p1j1jbr" path="res://scripts/answer.gd" id="1_mgik1"]
 [ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="2_mgik1"]
+[ext_resource type="Texture2D" uid="uid://bm76ufobhs1rm" path="res://images/restarticon.png" id="4_s6kr7"]
+
+[sub_resource type="GDScript" id="GDScript_dfy5j"]
+script/source = "extends CenterContainer
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if OS.has_feature(\"mobile\"):
+		if $VBoxContainer/answerbox.has_focus():
+			position.y = move_toward(position.y, -32, 4) 	
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_wcs6f"]
 font = ExtResource("2_mgik1")
@@ -50,19 +61,53 @@ bg_color = Color(0, 0, 0, 0.6862745)
 font = ExtResource("2_mgik1")
 font_size = 21
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s6kr7"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgm61"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1evjl"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.6, 0.6, 0.6, 0.6862745)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
 [node name="final_menu" type="Node2D" unique_id=1414528208]
 script = ExtResource("1_mgik1")
 
 [node name="background" type="Sprite2D" parent="." unique_id=1139854149]
 modulate = Color(1, 0, 0.25882354, 1)
-position = Vector2(640, 360.00003)
-scale = Vector2(0.9999998, 0.99999994)
+position = Vector2(640, 400.00003)
+scale = Vector2(0.9999998, 1.111111)
 texture = ExtResource("1_7y4sk")
 metadata/_edit_lock_ = true
 
 [node name="center_container" type="CenterContainer" parent="." unique_id=1939411707]
 offset_right = 1280.0
-offset_bottom = 720.0
+offset_bottom = 800.0
+script = SubResource("GDScript_dfy5j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="center_container" unique_id=1663232173]
 layout_mode = 2
@@ -97,9 +142,9 @@ text = "OK"
 
 [node name="back_btn" type="Button" parent="." unique_id=68817388]
 offset_left = 16.0
-offset_top = 664.0
+offset_top = 744.0
 offset_right = 142.0
-offset_bottom = 705.0
+offset_bottom = 785.0
 theme_override_fonts/font = ExtResource("2_mgik1")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_5vw27")
@@ -107,12 +152,26 @@ text = "Back
 "
 
 [node name="soro_label" type="Label" parent="." unique_id=246734293]
-offset_left = 880.0
-offset_top = 680.0
-offset_right = 1397.0
-offset_bottom = 719.0
-text = "Sorobinho 1.1 - miiteos.neocities.org 2026"
+offset_left = 856.0
+offset_top = 752.0
+offset_right = 1373.0
+offset_bottom = 791.0
+text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
 label_settings = SubResource("LabelSettings_chs5w")
+
+[node name="restart_btn" type="Button" parent="." unique_id=1474812317]
+offset_left = 16.0
+offset_top = 640.0
+offset_right = 96.0
+offset_bottom = 720.0
+theme_override_fonts/font = ExtResource("2_mgik1")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_s6kr7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgm61")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1evjl")
+icon = ExtResource("4_s6kr7")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="center_container/VBoxContainer/ok_btn" to="." method="_on_ok_btn_pressed"]
 [connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]
