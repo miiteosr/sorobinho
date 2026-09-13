@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://de5aq5p1j1jbr" path="res://scripts/answer.gd" id="1_mgik1"]
 [ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="2_mgik1"]
 [ext_resource type="Texture2D" uid="uid://bm76ufobhs1rm" path="res://images/restarticon.png" id="4_s6kr7"]
+[ext_resource type="Script" uid="uid://bvdc2t7v5krtk" path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" id="5_cgm61"]
 
 [sub_resource type="GDScript" id="GDScript_dfy5j"]
 script/source = "extends CenterContainer
@@ -94,6 +95,18 @@ corner_radius_top_right = 999
 corner_radius_bottom_right = 999
 corner_radius_bottom_left = 999
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gav4m"]
+bg_color = Color(0, 0, 0, 0.29411766)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tpu8"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(1, 1, 1, 1)
+
 [node name="final_menu" type="Node2D" unique_id=1414528208]
 script = ExtResource("1_mgik1")
 
@@ -156,7 +169,7 @@ offset_left = 856.0
 offset_top = 752.0
 offset_right = 1373.0
 offset_bottom = 791.0
-text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
+text = "Sorobinho v1.2.3 - miiteos.neocities.org 2026"
 label_settings = SubResource("LabelSettings_chs5w")
 
 [node name="restart_btn" type="Button" parent="." unique_id=1474812317]
@@ -173,5 +186,21 @@ icon = ExtResource("4_s6kr7")
 icon_alignment = 1
 expand_icon = true
 
+[node name="OnscreenKeyboard" type="PanelContainer" parent="." unique_id=1897879889]
+offset_left = 864.0
+offset_top = 800.0
+offset_right = 1280.0
+offset_bottom = 1152.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gav4m")
+script = ExtResource("5_cgm61")
+custom_layout_file = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_num.json"
+set_tool_tip = false
+background = SubResource("StyleBoxFlat_gav4m")
+normal = SubResource("StyleBoxFlat_7tpu8")
+font = ExtResource("2_mgik1")
+font_size = 32
+metadata/_custom_type_script = "uid://bvdc2t7v5krtk"
+
 [connection signal="pressed" from="center_container/VBoxContainer/ok_btn" to="." method="_on_ok_btn_pressed"]
 [connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]
+[connection signal="pressed" from="restart_btn" to="." method="_on_restart_btn_pressed"]

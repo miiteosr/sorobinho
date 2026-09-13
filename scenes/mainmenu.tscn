@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c11bd5m67066y" path="res://background.png" id="1_5mbse"]
 [ext_resource type="Script" uid="uid://cq4qwtibhcs8t" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
 [ext_resource type="FontFile" uid="uid://cfdgtfe4r58pi" path="res://manrope.ttf" id="2_natt5"]
-[ext_resource type="Script" uid="uid://bxn00jffmphj0" path="res://scripts/adaptarmenu.gd" id="3_3vvtq"]
 [ext_resource type="Texture2D" uid="uid://boxhvbelnbh7b" path="res://images/settings.png" id="4_7yvfd"]
+[ext_resource type="Script" uid="uid://bvdc2t7v5krtk" path="res://addons/onscreenkeyboard/onscreen_keyboard.gd" id="4_dfy5j"]
 [ext_resource type="Texture2D" uid="uid://darqtxudodyku" path="res://images/github_icon.png" id="5_s5g8n"]
 [ext_resource type="Texture2D" uid="uid://dy7aehlkrlec6" path="res://images/web_icon.png" id="6_dfy5j"]
 
@@ -47,10 +47,6 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 font = ExtResource("2_natt5")
 font_size = 27
 
-[sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
-font = ExtResource("2_natt5")
-font_size = 30
-
 [sub_resource type="LabelSettings" id="LabelSettings_dfy5j"]
 font = ExtResource("2_natt5")
 font_size = 90
@@ -62,6 +58,9 @@ font_size = 21
 [sub_resource type="LabelSettings" id="LabelSettings_natt5"]
 font = ExtResource("2_natt5")
 font_size = 54
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5g8n"]
+bg_color = Color(0, 0, 0, 0.6862745)
 
 [sub_resource type="Theme" id="Theme_s5g8n"]
 default_font = ExtResource("2_natt5")
@@ -98,9 +97,6 @@ corner_radius_top_left = 999
 corner_radius_top_right = 999
 corner_radius_bottom_right = 999
 corner_radius_bottom_left = 999
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5g8n"]
-bg_color = Color(0, 0, 0, 0.6862745)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf3n4"]
 content_margin_left = 6.0
@@ -168,6 +164,22 @@ corner_radius_top_right = 999
 corner_radius_bottom_right = 999
 corner_radius_bottom_left = 999
 
+[sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
+font = ExtResource("2_natt5")
+font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prb5i"]
+bg_color = Color(0, 0, 0, 0.29411766)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwyuh"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(1, 1, 1, 1)
+
 [node name="main_menu" type="Node2D" unique_id=753227403]
 script = ExtResource("1_r3g3c")
 
@@ -182,7 +194,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 88.0
-script = ExtResource("3_3vvtq")
 
 [node name="text_inputs" type="Control" parent="menu" unique_id=876137676]
 anchors_preset = 0
@@ -245,9 +256,9 @@ theme_override_styles/read_only = SubResource("StyleBoxFlat_r3g3c")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3vvtq")
 placeholder_text = "3"
 alignment = 1
-max_length = 3
+max_length = 4
 emoji_menu_enabled = false
-virtual_keyboard_type = 3
+virtual_keyboard_type = 2
 
 [node name="labels" type="Control" parent="menu" unique_id=56700571]
 anchors_preset = 0
@@ -265,15 +276,6 @@ text = "Error: invaid values"
 label_settings = SubResource("LabelSettings_s5g8n")
 horizontal_alignment = 1
 
-[node name="xinarow" type="Label" parent="menu/labels" unique_id=206365331]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 752.0
-offset_right = 525.0
-offset_bottom = 793.0
-text = "0 in a row"
-label_settings = SubResource("LabelSettings_3vvtq")
-
 [node name="title" type="Label" parent="menu/labels" unique_id=2139182453]
 layout_mode = 0
 offset_left = 440.0
@@ -289,7 +291,7 @@ offset_left = 440.0
 offset_top = 256.0
 offset_right = 957.0
 offset_bottom = 295.0
-text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
+text = "Sorobinho v1.2.3 - miiteos.neocities.org 2026"
 label_settings = SubResource("LabelSettings_r3g3c")
 
 [node name="speed_txt" type="Label" parent="menu/labels" unique_id=8034658]
@@ -327,12 +329,31 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="website_btn" type="Button" parent="menu/buttons" unique_id=2066901064]
+[node name="enter_btn" type="Button" parent="menu/buttons" unique_id=873365055]
 layout_mode = 0
-offset_left = 1160.0
-offset_top = 744.0
-offset_right = 1208.0
+offset_left = 440.0
+offset_top = 576.0
+offset_right = 840.0
+offset_bottom = 617.0
+theme_override_fonts/font = ExtResource("2_natt5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5g8n")
+text = "Start!"
+
+[node name="misc" type="Control" parent="." unique_id=1229663451]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 752.0
+offset_right = 48.0
 offset_bottom = 792.0
+
+[node name="website_btn" type="Button" parent="misc" unique_id=2066901064]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = -8.0
+offset_right = 1200.0
+offset_bottom = 40.0
 theme = SubResource("Theme_s5g8n")
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_4hago")
@@ -345,23 +366,12 @@ clip_text = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="enter_btn" type="Button" parent="menu/buttons" unique_id=873365055]
+[node name="restart_btn" type="Button" parent="misc" unique_id=750976052]
 layout_mode = 0
-offset_left = 440.0
-offset_top = 576.0
-offset_right = 840.0
-offset_bottom = 617.0
-theme_override_fonts/font = ExtResource("2_natt5")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_s5g8n")
-text = "Start!"
-
-[node name="restart_btn" type="Button" parent="menu/buttons" unique_id=750976052]
-layout_mode = 0
-offset_left = 1216.0
-offset_top = 744.0
-offset_right = 1264.0
-offset_bottom = 792.0
+offset_left = 1208.0
+offset_top = -8.0
+offset_right = 1256.0
+offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_wf3n4")
@@ -371,12 +381,12 @@ icon = ExtResource("5_s5g8n")
 icon_alignment = 1
 expand_icon = true
 
-[node name="settings_btn" type="Button" parent="menu/buttons" unique_id=617150289]
+[node name="settings_btn" type="Button" parent="misc" unique_id=617150289]
 layout_mode = 0
-offset_left = 1224.0
-offset_top = 8.0
-offset_right = 1272.0
-offset_bottom = 56.0
+offset_left = 1216.0
+offset_top = -744.0
+offset_right = 1264.0
+offset_bottom = -696.0
 theme_override_fonts/font = ExtResource("2_natt5")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_7yvfd")
@@ -386,6 +396,27 @@ icon = ExtResource("4_7yvfd")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="menu/buttons/website_btn" to="." method="_on_website_btn_pressed"]
+[node name="xinarow" type="Label" parent="misc" unique_id=206365331]
+layout_mode = 0
+offset_right = 517.0
+offset_bottom = 41.0
+text = "0 in a row"
+label_settings = SubResource("LabelSettings_3vvtq")
+
+[node name="OnscreenKeyboard" type="PanelContainer" parent="." unique_id=901437712]
+offset_left = 864.0
+offset_top = 800.0
+offset_right = 1280.0
+offset_bottom = 1152.0
+script = ExtResource("4_dfy5j")
+custom_layout_file = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_num.json"
+set_tool_tip = false
+background = SubResource("StyleBoxFlat_prb5i")
+normal = SubResource("StyleBoxFlat_xwyuh")
+font = ExtResource("2_natt5")
+font_size = 32
+metadata/_custom_type_script = "uid://bvdc2t7v5krtk"
+
 [connection signal="pressed" from="menu/buttons/enter_btn" to="." method="_on_enter_btn_pressed"]
-[connection signal="pressed" from="menu/buttons/restart_btn" to="." method="_on_restart_btn_pressed"]
+[connection signal="pressed" from="misc/website_btn" to="." method="_on_website_btn_pressed"]
+[connection signal="pressed" from="misc/restart_btn" to="." method="_on_restart_btn_pressed"]

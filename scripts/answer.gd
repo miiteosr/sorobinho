@@ -7,10 +7,6 @@ extends Node
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	answerbox.grab_focus()
-	
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_accept"):
-		validate()
 
 func _on_ok_btn_pressed() -> void:
 	validate()

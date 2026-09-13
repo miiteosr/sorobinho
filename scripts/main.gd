@@ -55,4 +55,5 @@ func display_nums() -> void:
 	get_tree().change_scene_to_file("res://scenes/finalmenu.tscn")
 
 func _on_back_btn_pressed() -> void:
+	Game.inarow = 0
 	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")

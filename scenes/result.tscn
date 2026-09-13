@@ -125,7 +125,7 @@ offset_left = 856.0
 offset_top = 752.0
 offset_right = 1373.0
 offset_bottom = 791.0
-text = "Sorobinho v1.2.2 - miiteos.neocities.org 2026"
+text = "Sorobinho v1.2.3 - miiteos.neocities.org 2026"
 label_settings = SubResource("LabelSettings_4cf5t")
 
 [node name="restart_btn" type="Button" parent="." unique_id=1189820043]
