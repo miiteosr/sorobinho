@@ -70,7 +70,6 @@ texture = ExtResource("2_1iwmk")
 
 [node name="audio_drumroll" type="AudioStreamPlayer" parent="." unique_id=1921117094]
 stream = ExtResource("3_a38kb")
-autoplay = true
 
 [node name="bellsfx" type="AudioStreamPlayer" parent="." unique_id=965570833]
 stream = ExtResource("4_71102")
@@ -121,11 +120,11 @@ text = "Back
 "
 
 [node name="soro_label" type="Label" parent="." unique_id=972796491]
-offset_left = 856.0
+offset_left = 976.0
 offset_top = 752.0
-offset_right = 1373.0
+offset_right = 1493.0
 offset_bottom = 791.0
-text = "Sorobinho v1.2.3 - miiteos.neocities.org 2026"
+text = "Sorobinho v1.3 - miiteos - 2026"
 label_settings = SubResource("LabelSettings_4cf5t")
 
 [node name="restart_btn" type="Button" parent="." unique_id=1189820043]
@@ -142,6 +141,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a38kb")
 icon = ExtResource("6_1iwmk")
 icon_alignment = 1
 expand_icon = true
+
+[node name="cooldown" type="Timer" parent="." unique_id=2003074792]
+one_shot = true
 
 [connection signal="finished" from="audio_drumroll" to="." method="_on_audio_drumroll_finished"]
 [connection signal="pressed" from="back_btn" to="." method="_on_back_btn_pressed"]

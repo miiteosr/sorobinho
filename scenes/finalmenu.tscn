@@ -144,6 +144,7 @@ alignment = 1
 max_length = 13
 emoji_menu_enabled = false
 select_all_on_focus = true
+virtual_keyboard_enabled = false
 virtual_keyboard_type = 2
 
 [node name="ok_btn" type="Button" parent="center_container/VBoxContainer" unique_id=1768127561]
@@ -165,11 +166,11 @@ text = "Back
 "
 
 [node name="soro_label" type="Label" parent="." unique_id=246734293]
-offset_left = 856.0
+offset_left = 976.0
 offset_top = 752.0
-offset_right = 1373.0
+offset_right = 1493.0
 offset_bottom = 791.0
-text = "Sorobinho v1.2.3 - miiteos.neocities.org 2026"
+text = "Sorobinho v1.3 - miiteos - 2026"
 label_settings = SubResource("LabelSettings_chs5w")
 
 [node name="restart_btn" type="Button" parent="." unique_id=1474812317]
@@ -194,7 +195,6 @@ offset_bottom = 1152.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gav4m")
 script = ExtResource("5_cgm61")
 custom_layout_file = "res://addons/onscreenkeyboard/customize/keyboardLayouts/keyboard_layout_num.json"
-set_tool_tip = false
 background = SubResource("StyleBoxFlat_gav4m")
 normal = SubResource("StyleBoxFlat_7tpu8")
 font = ExtResource("2_mgik1")

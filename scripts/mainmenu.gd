@@ -4,6 +4,8 @@ extends Node2D
 @onready var digits: LineEdit = $menu/text_inputs/digits
 @onready var numbers: LineEdit = $menu/text_inputs/numbers
 
+var num_limit: int 
+
 func _ready() -> void:
 	speed.placeholder_text = str(Game.time)
 	digits.placeholder_text = str(Game.digits_per_number)
@@ -27,8 +29,12 @@ func _on_enter_btn_pressed() -> void:
 			$menu/labels/error_txt.visible = true
 			return
 
+	if int(digits.text) == 1: num_limit = 100
+	if int(digits.text) == 2: num_limit = 50
+	if int(digits.text) >= 3: num_limit = 25
+
 	if numbers.text.length() > 0:
-		if int(numbers.text) >= 3 and int(numbers.text) <= 100:
+		if int(numbers.text) >= 2 and int(numbers.text) <= num_limit:
 			Game.num_to_display = int(numbers.text)
 		else:
 			$menu/labels/error_txt.visible = true
@@ -38,8 +44,10 @@ func _on_enter_btn_pressed() -> void:
 
 
 func _on_settings_btn_pressed() -> void:
-	pass
-
+	if $settings.mostrado:
+		$settings.esconder()
+	else:
+		$settings.mostrar()
 
 func _on_website_btn_pressed() -> void:
 	OS.shell_open("https://miiteos.neocities.org/")

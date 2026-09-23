@@ -13,6 +13,9 @@ func _on_audio_drumroll_finished() -> void:
 	audio_finished = true
 
 func _ready() -> void:
+	if !Game.mute:
+		$audio_drumroll.play()
+	
 	resp_txt.text = str(Game.num_sum)
 	sua_resp.text = "Your Answer: " + str(Game.resposta)
 	get_tree().create_timer(3.90).timeout.connect(show_result)
@@ -23,8 +26,8 @@ func _ready() -> void:
 			conta.text += " + "	
 	
 func _input(event: InputEvent) -> void:
-	if event is InputEventScreenTouch and event.pressed:
-		if !audio_finished:
+	if ((event is InputEventScreenTouch and event.pressed) or (Input.is_action_just_pressed("ui_accept"))) and Game.quick_reset and $cooldown.time_left <= 0:
+		if !result_mostrado:
 			show_result()
 			$audio_drumroll.stop()
 		else:
@@ -34,12 +37,14 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and !audio_finished:
 		show_result()
 		$audio_drumroll.stop()
+		
 
 func show_result() -> void:
 	if result_mostrado:
 		return
 		
 	result_mostrado = true
+	$cooldown.start(1)
 
 	$center_container.visible = true
 	$restart_btn.visible = true

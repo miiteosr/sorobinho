@@ -151,6 +151,7 @@ func _update_auto_display_on_input(event):
 				_show_keyboard()
 			else:
 				_hide_keyboard()
+				if $"../settings" != null: $"../settings".esconder()
 
 	if event is InputEventKey:
 		var focus_object = get_viewport().gui_get_focus_owner()

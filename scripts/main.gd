@@ -13,18 +13,23 @@ func _process(delta: float) -> void:
 	
 func display_nums() -> void:
 	timer_node.wait_time = Game.time
+
+	if !Game.mute:
+		$cowbellsfx.play()
 	
 	Game.nums.clear()
 	Game.num_sum = 0
 	
 	await get_tree().create_timer(1).timeout
 	
-	$cowbellsfx.play()
+	if !Game.mute:
+		$cowbellsfx.play()
 	$countdown_container/VBoxContainer/set.visible = true
 	
 	await get_tree().create_timer(1).timeout
 	
-	$cowbellsfx.play()
+	if !Game.mute:
+		$cowbellsfx.play()
 	$countdown_container/VBoxContainer/go.visible = true
 	
 	
@@ -40,9 +45,18 @@ func display_nums() -> void:
 	
 		var rand_number = randi_range(1 + int("0".repeat(Game.digits_per_number - 1)) , int("9".repeat(Game.digits_per_number)))
 		Game.nums.append(rand_number)
-		$bellsfx.play()
 		
-		number.text = str(rand_number).pad_zeros(Game.digits_per_number)
+		if !Game.mute:
+			$bellsfx.play()
+			
+		if Game.tts:
+			var voices = DisplayServer.tts_get_voices_for_language(Game.tts_lang)
+			var voice_id = voices[0]
+					
+			DisplayServer.tts_speak(str(rand_number), voice_id)
+		
+		if Game.disp_number:
+			number.text = str(rand_number).pad_zeros(Game.digits_per_number)
 		timer_node.wait_time = Game.time
 		timer_node.start(Game.time)
 		await timer_node.timeout
