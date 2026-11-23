@@ -1,3 +1,4 @@
+![sorobinho logo] (https://github.com/miiteosr/sorobinho/blob/main/images/icon_menor.png)
 # sorobinho
 
 Sororbinho é um app minimalista de flash anzan com o foco em
