@@ -75,7 +75,6 @@ stream = ExtResource("3_a38kb")
 stream = ExtResource("4_71102")
 
 [node name="center_container" type="CenterContainer" parent="." unique_id=1282177646]
-visible = false
 offset_right = 1280.0
 offset_bottom = 800.0
 

@@ -469,20 +469,19 @@ font = ExtResource("2_natt5")
 font_size = 32
 metadata/_custom_type_script = "uid://bvdc2t7v5krtk"
 
-[node name="settings" type="Control" parent="." unique_id=434235646]
+[node name="settings" type="Control" parent="." unique_id=1115955647]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 672.0
 offset_right = 40.0
-offset_bottom = 712.0
+offset_bottom = 40.0
 script = ExtResource("8_85riq")
 
-[node name="background" type="Control" parent="settings" unique_id=399289701]
+[node name="background" type="Control" parent="settings" unique_id=133990130]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="background" type="ColorRect" parent="settings/background" unique_id=585622205]
+[node name="background" type="ColorRect" parent="settings/background" unique_id=310949964]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 128.0
@@ -490,7 +489,7 @@ offset_right = 896.0
 offset_bottom = 800.0
 color = Color(0.13362706, 0.028735945, 0.05477462, 1)
 
-[node name="decoration" type="ColorRect" parent="settings/background" unique_id=2058209366]
+[node name="decoration" type="ColorRect" parent="settings/background" unique_id=1852097274]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 128.0
@@ -498,7 +497,7 @@ offset_right = 896.0
 offset_bottom = 192.0
 color = Color(1, 1, 1, 0.078431375)
 
-[node name="decoration2" type="ColorRect" parent="settings/background" unique_id=2072302728]
+[node name="decoration2" type="ColorRect" parent="settings/background" unique_id=338220355]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 296.0
@@ -506,7 +505,7 @@ offset_right = 896.0
 offset_bottom = 328.0
 color = Color(1, 1, 1, 0.039215688)
 
-[node name="decoration3" type="ColorRect" parent="settings/background" unique_id=661795790]
+[node name="decoration3" type="ColorRect" parent="settings/background" unique_id=1264958138]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 552.0
@@ -514,7 +513,7 @@ offset_right = 896.0
 offset_bottom = 584.0
 color = Color(1, 1, 1, 0.039215688)
 
-[node name="decoration4" type="ColorRect" parent="settings/background" unique_id=1766580428]
+[node name="decoration4" type="ColorRect" parent="settings/background" unique_id=1466538114]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 192.0
@@ -522,12 +521,12 @@ offset_right = 896.0
 offset_bottom = 224.0
 color = Color(1, 1, 1, 0.039215688)
 
-[node name="labels" type="Control" parent="settings" unique_id=973962453]
+[node name="labels" type="Control" parent="settings" unique_id=1906094365]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="title" type="Label" parent="settings/labels" unique_id=665671658]
+[node name="title" type="Label" parent="settings/labels" unique_id=1551568467]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 128.0
@@ -538,7 +537,7 @@ label_settings = SubResource("LabelSettings_26el7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tts_title" type="Label" parent="settings/labels" unique_id=1777873993]
+[node name="tts_title" type="Label" parent="settings/labels" unique_id=338323401]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 296.0
@@ -549,7 +548,7 @@ label_settings = SubResource("LabelSettings_85riq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="lang_title" type="Label" parent="settings/labels" unique_id=490903952]
+[node name="lang_title" type="Label" parent="settings/labels" unique_id=1832597750]
 modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 layout_mode = 0
 offset_left = 392.0
@@ -559,7 +558,7 @@ offset_bottom = 459.0
 text = "TTS Language"
 label_settings = SubResource("LabelSettings_whmqe")
 
-[node name="adv_title" type="Label" parent="settings/labels" unique_id=219328916]
+[node name="adv_title" type="Label" parent="settings/labels" unique_id=184694403]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 552.0
@@ -570,7 +569,7 @@ label_settings = SubResource("LabelSettings_85riq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="general_title" type="Label" parent="settings/labels" unique_id=1275715706]
+[node name="general_title" type="Label" parent="settings/labels" unique_id=796387246]
 layout_mode = 0
 offset_left = 384.0
 offset_top = 192.0
@@ -581,12 +580,12 @@ label_settings = SubResource("LabelSettings_85riq")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="options" type="Control" parent="settings" unique_id=701149092]
+[node name="options" type="Control" parent="settings" unique_id=813169367]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="mute_btn" type="Button" parent="settings/options" unique_id=1564690034]
+[node name="mute_btn" type="Button" parent="settings/options" unique_id=1797645649]
 layout_mode = 0
 offset_left = 392.0
 offset_top = 224.0
@@ -602,7 +601,7 @@ text = "Mute"
 alignment = 0
 icon_alignment = 2
 
-[node name="lang_list" type="ItemList" parent="settings/options" unique_id=2130361394]
+[node name="lang_list" type="ItemList" parent="settings/options" unique_id=1153555477]
 process_mode = 4
 modulate = Color(0.35156304, 0.35156286, 0.35156283, 1)
 layout_mode = 0
@@ -622,7 +621,7 @@ item_1/icon = ExtResource("10_4hago")
 item_2/icon = ExtResource("9_4hago")
 item_3/icon = ExtResource("11_gjjcl")
 
-[node name="mark_tts" type="Button" parent="settings/options" unique_id=361044594]
+[node name="mark_tts" type="Button" parent="settings/options" unique_id=557990947]
 layout_mode = 0
 offset_left = 392.0
 offset_top = 336.0
@@ -638,7 +637,7 @@ text = "Text to Speech"
 alignment = 0
 icon_alignment = 2
 
-[node name="disp_num_btn" type="Button" parent="settings/options" unique_id=474076521]
+[node name="disp_num_btn" type="Button" parent="settings/options" unique_id=1075607395]
 process_mode = 4
 modulate = Color(0.3529412, 0.3529412, 0.3529412, 1)
 layout_mode = 0
@@ -658,7 +657,7 @@ icon = ExtResource("13_gjjcl")
 alignment = 0
 icon_alignment = 2
 
-[node name="double_click_reset" type="Button" parent="settings/options" unique_id=387374688]
+[node name="double_click_reset" type="Button" parent="settings/options" unique_id=1491491766]
 layout_mode = 0
 offset_left = 392.0
 offset_top = 592.0
@@ -678,8 +677,3 @@ icon_alignment = 2
 [connection signal="pressed" from="misc/website_btn" to="." method="_on_website_btn_pressed"]
 [connection signal="pressed" from="misc/restart_btn" to="." method="_on_restart_btn_pressed"]
 [connection signal="pressed" from="misc/settings_btn" to="." method="_on_settings_btn_pressed"]
-[connection signal="toggled" from="settings/options/mute_btn" to="settings" method="_on_mute_btn_toggled"]
-[connection signal="item_selected" from="settings/options/lang_list" to="settings" method="_on_lang_list_item_selected"]
-[connection signal="toggled" from="settings/options/mark_tts" to="settings" method="_on_mark_tts_toggled"]
-[connection signal="toggled" from="settings/options/disp_num_btn" to="settings" method="_on_disp_num_btn_toggled"]
-[connection signal="toggled" from="settings/options/double_click_reset" to="settings" method="_on_double_click_reset_toggled"]

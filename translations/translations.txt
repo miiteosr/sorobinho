@@ -1,0 +1,5 @@
+keys,pt,en,fr,ja
+_time,Tempo,Time
+_digits,Dígitos,Digits
+_nums,Números,Numbers
+_start,Começar,Start
